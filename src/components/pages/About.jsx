@@ -1,5 +1,5 @@
 import Nav from '../Nav.jsx';
-import aboutImg  from '../../assets/About.jpg'
+import aboutImg  from '../../assets/About.png'
 import { ABOUT_TEXT } from '../../Constansts/index.js';
 const About = () => {
   return (
@@ -9,7 +9,7 @@ const About = () => {
     <div className="flex flex-wrap">
            <div className="w-full lg:w-1/2 lg:p-8">
                <div className="flex items-center justify-center">
-                <img  className="rounded-full w-[35rem] object-fill bg-black" src={aboutImg} alt="about"/>
+                <img  className="rounded-full w-[35rem] object-fill bg-transparent" src={aboutImg} alt="about"/>
                </div>
             </div>
             <div className="w-full lg:w-1/2">
