@@ -12,6 +12,7 @@ export default {
         DancingScript:['Dancing Script','cursive'],
         Playwrite:['Playwrite GB S','cursive'],
         Caveat:['Caveat','cursive'],
+        Borel:['Borel','cursive']
       },
       spacing: {
         nav: '109px',
@@ -20,6 +21,13 @@ export default {
   },
   plugins: [],
 }
+
+// .borel-regular {
+//   font-family: "Borel", cursive;
+//   font-weight: 400;
+//   font-style: normal;
+// }
+
 
 // .pacifico-regular {
 //   font-family: "Pacifico", cursive;

@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import Nav from "../Nav";
 
 // Import images at the top
@@ -41,9 +41,10 @@ const Modal = ({ isOpen, onClose, image, content }) => {
 };
 
 const Arts = () => {
-  const [isModalOpen, setIsModalOpen] =useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedContent, setSelectedContent] =useState('');
+  const [selectedContent, setSelectedContent] = useState('');
+  const [ageVerified, setAgeVerified] = useState(false); // New state for age verification
 
   const images = [
     { src: Art1, content: 'This is a beautiful pencil sketch of nature.' },
@@ -69,13 +70,26 @@ const Arts = () => {
     <>
       <div className="mt-nav md:mt-nav+4 home-background">
         <Nav />
+        {/* Age Verification Section */}
+        {!ageVerified && (
+          <div className="p-4 text-center">
+            <p>This content is age-restricted. Please confirm your age to view it.</p>
+            <button
+              onClick={() => setAgeVerified(true)}
+              className="mt-2 px-4 py-2  bg-gray-400 text-slate-400 rounded-md"
+            >
+              I am above the required age
+            </button>
+          </div>
+        )}
+        
         {/* Grid layout for images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
           {images.map((image, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-lg cursor-pointer"
-              onClick={() => openModal(image.src, image.content)}
+              className={`overflow-hidden rounded-lg cursor-pointer ${!ageVerified ? 'blur-xl' : ''}`}
+              onClick={() => ageVerified && openModal(image.src, image.content)}
             >
               <img
                 src={image.src}
