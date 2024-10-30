@@ -7,27 +7,8 @@ const Contact = () => {
   const [myName, setMyName] = useState("");
   const [yourName, setYourName] = useState("");
   const [message, setMessage] = useState("");
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     await push(ref(db, "contacts"), {
-  //       myName,
-  //       yourName,
-  //       message,
-  //       timestamp: serverTimestamp()
-  //     });
-  //     alert("Message sent successfully!");
-  //   } catch (error) {
-  //     console.error("Error adding message: ", error);
-  //     alert("Error sending message. Please try again.");
-  //   }
-
-  //   setMyName("");
-  //   setYourName("");
-  //   setMessage("");
-  // };
+  const [alertMessage, setAlertMessage] = useState(""); // State to manage alert message
+  const [isAlertVisible, setIsAlertVisible] = useState(false); // State to control alert visibility
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,13 +20,17 @@ const Contact = () => {
         message,
         timestamp: serverTimestamp()
       });
-      alert("Message sent successfully!");
+      setAlertMessage("Message sent successfully!"); // Success message
+      setIsAlertVisible(true);
+      setTimeout(() => setIsAlertVisible(false), 3000); // Hide alert after 3 seconds
       setMyName("");
       setYourName("");
       setMessage("");
     } catch (error) {
       console.error("Error adding message: ", error);
-      alert("Error sending message. Please try again.");
+      setAlertMessage("Error sending message. Please try again."); // Error message
+      setIsAlertVisible(true);
+      setTimeout(() => setIsAlertVisible(false), 3000); // Hide alert after 3 seconds
     }
   };
   
@@ -53,7 +38,12 @@ const Contact = () => {
     <>
       <NavBar />
       <div className="mt-nav md:mt-14 flex flex-col gap-3 items-center justify-center min-h-screen home-background">
-        <div className="w-full max-w-lg p-6 rounded-lg shadow-lg font-Playwrite font-extralight">
+        {isAlertVisible && (
+          <div className="fixed top-5 left-1/2 transform -translate-x-1/2 w-full max-w-xs p-4 bg-gray-100 border border-slate-400 text-slate-700 rounded-md shadow-lg z-50">
+            {alertMessage}
+          </div>
+        )}
+        <div className="w-full max-w-lg p-6 rounded-lg shadow-lg font-Borel font-extralight">
           <h2 className="text-2xl mb-6 text-center font-Borel font-extralight">Forgiving Conformation</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
