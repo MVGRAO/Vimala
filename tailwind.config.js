@@ -12,7 +12,10 @@ export default {
         DancingScript:['Dancing Script','cursive'],
         Playwrite:['Playwrite GB S','cursive'],
         Caveat:['Caveat','cursive'],
-        Borel:['Borel','cursive']
+        Borel:['Borel','cursive'],
+        Handlee:['Handlee','cursive'],
+        Partrick:['Patrick Hand','cursive'],
+        Sawarabi:['Sawarabi Gothic','sans-serif']
       },
       spacing: {
         nav: '109px',
@@ -21,6 +24,24 @@ export default {
   },
   plugins: [],
 }
+
+// .handlee-regular {
+//   font-family: "Handlee", cursive;
+//   font-weight: 400;
+//   font-style: normal;
+// }
+
+// .sawarabi-gothic-regular {
+//   font-family: "Sawarabi Gothic", sans-serif;
+//   font-weight: 400;
+//   font-style: normal;
+// }
+
+// .patrick-hand-regular {
+//   font-family: "Patrick Hand", cursive;
+//   font-weight: 400;
+//   font-style: normal;
+// }
 
 // .borel-regular {
 //   font-family: "Borel", cursive;

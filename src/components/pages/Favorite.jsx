@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import NavBar from "../Nav";
 import Mine from "../../assets/Me.jpg"; // Your image import
 
-const Favorite = ({ isOpen, onClose }) => {
+import { Letter } from '../../Constansts';
+
+const Favorite = ({ isOpen, onClose, songLink }) => {
   return (
     <>
       {isOpen && (
@@ -16,12 +18,20 @@ const Favorite = ({ isOpen, onClose }) => {
                 <img src={Mine} alt="Modal Art" className="w-full h-full object-cover" />
               </div>
               {/* Right side: Content */}
-              <div className="w-1/2 p-4">
-                <h2 className="text-2xl font-bold mb-4">Image Details</h2>
-                <p>This is my artwork.</p>
+              <div className="w-1/2 p-4 flex flex-col">
+                <h2 className="text-2xl font-bold mb-4">Na Comment Ni Art ki</h2>
+                <p>Antha rasavu gesavu naku em cheppalo theliyatle, Pata rupam lo cheputha ok na.....</p>
+                <a
+                  href={songLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-slate-500 mt-3"
+                >
+                  Dedicated song for this Art
+                </a>
                 <button
                   onClick={onClose}
-                  className="mt-4 px-4 py-2 text-white hover:text-slate-700 duration-500 text-center bg-slate-400 rounded-md"
+                  className="mt-4 px-4 py-2 w-24 self-start text-white hover:text-slate-700 duration-500 text-center bg-slate-400 rounded-md"
                 >
                   Close
                 </button>
@@ -48,18 +58,18 @@ const Arts = () => {
 
   return (
     <>
-      <div className="mt-nav md:mt-nav+10 home-background flex flex-col items-center justify-center">
+      <div className="mt-nav md:mt-nav+10 home-background flex flex-col items-center justify-center font-Handlee font-semibold">
         <NavBar />
 
         {/* Age Verification Section */}
         {!ageVerified && (
           <div className="p-4 text-center">
-            <p>This content is age-restricted. Please confirm your age to view it.</p>
+            <p className="whitespace-pre-line">{Letter}</p>
             <button
               onClick={() => setAgeVerified(true)}
-              className="mt-2 px-4 py-2 bg-gray-400 text-gray-600 rounded-md"
+              className="mt-2 px-4 py-2 bg-gray-700 text-white rounded-md"
             >
-              I am above the required age
+              Sarley Kshamincha
             </button>
           </div>
         )}
@@ -80,6 +90,7 @@ const Arts = () => {
         <Favorite
           isOpen={isModalOpen}
           onClose={closeModal}
+          songLink="https://youtube.com/clip/UgkxIaEv4jtb7bZX7rJzvB-FnMd5mRZqrLc-?si=hVXlP9RbqBvYQt2e" // Pass the song link
         />
       </div>
     </>

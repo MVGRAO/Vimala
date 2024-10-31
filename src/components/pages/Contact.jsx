@@ -20,7 +20,7 @@ const Contact = () => {
         message,
         timestamp: serverTimestamp()
       });
-      setAlertMessage("Message sent successfully!"); // Success message
+      setAlertMessage("Nee Lekha Naku Andhindhi"); // Success message
       setIsAlertVisible(true);
       setTimeout(() => setIsAlertVisible(false), 3000); // Hide alert after 3 seconds
       setMyName("");
@@ -43,8 +43,8 @@ const Contact = () => {
             {alertMessage}
           </div>
         )}
-        <div className="w-full max-w-lg p-6 rounded-lg shadow-lg font-Borel font-extralight">
-          <h2 className="text-2xl mb-6 text-center font-Borel font-extralight">Forgiving Conformation</h2>
+        <div className="w-full max-w-lg p-6 rounded-lg shadow-lg font-ubuntu">
+          <h2 className="text-2xl mb-6 text-center font-Borel font-extralight underline">Forgiving Conformation</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">My Name</label>
@@ -82,7 +82,7 @@ const Contact = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className="w-full font-light px-4 py-2 pt-4 bg-gray-400 text-gray-600 text-xl rounded-lg shadow"
+                className="w-full font-light px-4 py-2 bg-gray-600 text-white text-xl rounded-lg shadow font-ubuntu"
               >
                 Submit
               </button>

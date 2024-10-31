@@ -16,7 +16,7 @@ const Nav = () => {
       <div className="flex items-center justify-between    py-4 md:px-10 px-7 max-sm:bg-white">
         <span className="font-bold text-2xl cursor-pointer bg-white flex items-center font-[Poppins] text-gray-800">
           <span className="text-4xl text-slate-600 mr-1 pt-2 pl-4 font-DancingScript bg-transparent">
-            Artist
+            Vimala
           </span>
         </span>
 
