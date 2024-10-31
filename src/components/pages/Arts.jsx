@@ -100,7 +100,7 @@ const Arts = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className={`overflow-hidden rounded-lg cursor-pointer ${!ageVerified ? 'blur-xl' : ''}`}
+              className={`overflow-hidden rounded-lg cursor-pointer ${!ageVerified ? 'blur-md' : ''}`}
               onClick={() => ageVerified && openModal(image.src, image.content,image.songLink)}
             >
               <img

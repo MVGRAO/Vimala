@@ -76,7 +76,7 @@ const Arts = () => {
 
         {/* Display your image with conditional blur */}
         <div
-          className={`overflow-hidden rounded-lg cursor-pointer ${!ageVerified ? 'blur-xl' : ''}`}
+          className={`overflow-hidden rounded-lg cursor-pointer ${!ageVerified ? 'blur-md' : ''}`}
           onClick={() => ageVerified && openModal()}
         >
           <img
